@@ -18,7 +18,7 @@ Please keep your codes and environments, it would be nice to present your pages 
 
     Here is the expected output:
 
-    ![images/challengeA.png]
+    ![images/challengeA.png](images/challengeA.png)
 
 - **Challenge B**
 
@@ -61,7 +61,7 @@ Please keep your codes and environments, it would be nice to present your pages 
 
     Here is the expected output:
 
-    ![images/challengeA.png]
+    ![images/challengeB.png](images/challengeB.png)
 
     The cpm in the responded bid is generated randomly.
 
