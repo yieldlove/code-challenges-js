@@ -43,6 +43,7 @@ Please keep your codes and environments, it would be nice to present your pages 
 
             The provided yieldloveBidAdapter.js needs to be placed into the `modules` folder.
 
+    - The `window.pbjsYLHH` must refer to `pbjs` before the calling on pbjs.requestBids
     - The html page to display ads should be accessible via the `http://test.yieldlove.com:20457/static`
     - The ad unit code (ad unit path) displayed in the 'div-2' should be `/53015287/yieldlove.com_hb_test_300x250_2`
 
@@ -58,6 +59,10 @@ Please keep your codes and environments, it would be nice to present your pages 
         ```
 
         The size should be with the width of 300 and the height of 250
+
+    - It's recommended to turn on Prebid.js debug messages on console to debug. Check more details here:
+
+        https://docs.prebid.org/troubleshooting/troubleshooting-guide.html#turn-on-prebidjs-debug-messages
 
     Here is the expected output:
 
