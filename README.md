@@ -18,7 +18,7 @@ Please keep your codes and environments, it would be nice to present your pages 
 
     Here is the expected output:
 
-    ![Code%20challenge%20for%20Job%20Interview%20da2bce296ebd4b16a90cf0280e59d8d4/Untitled.png](Code%20challenge%20for%20Job%20Interview%20da2bce296ebd4b16a90cf0280e59d8d4/Untitled.png)
+    ![images/challengeA.png]
 
 - **Challenge B**
 
@@ -61,7 +61,7 @@ Please keep your codes and environments, it would be nice to present your pages 
 
     Here is the expected output:
 
-    ![Code%20challenge%20for%20Job%20Interview%20da2bce296ebd4b16a90cf0280e59d8d4/Untitled%201.png](Code%20challenge%20for%20Job%20Interview%20da2bce296ebd4b16a90cf0280e59d8d4/Untitled%201.png)
+    ![images/challengeA.png]
 
     The cpm in the responded bid is generated randomly.
 
