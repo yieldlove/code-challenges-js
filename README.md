@@ -1,135 +1,167 @@
-# Code challenge for Job Interview
+# Code Challenges
 
-# Goal
+- [Code Challenges](#code-challenges)
+  * [Goal](#goal)
+  * [Challenges](#challenges)
+    + [Challenge A](#challenge-a)
+    + [Challenge B](#challenge-b)
+      - [Endpoint](#endpoint)
+      - [Prebid.js Build](#prebidjs-build)
+      - [Yieldlove bid adapter](#yieldlove-bid-adapter)
+      - [Debugging](#debugging)
+    + [Challenge C](#challenge-c)
+    + [Challenge D](#challenge-d)
+    + [Challenge E](#challenge-e)
+- [References](#references)
+    + [What is header bidding?](#what-is-header-bidding)
+    + [Basic Prebid.js Example with googletag integration](#basic-prebidjs-example-with-googletag-integration)
+    + [Ad Unit Reference](#ad-unit-reference)
+    + [Google Tag API Reference](#google-tag-api-reference)
+    + [Building Prebid.js locally for tests](#building-prebidjs-locally-for-tests)
 
-Read/learn documents in the references section about header bidding. 
 
-Implement the following challenges **as possible as you can**.
+## Goal
 
-Please keep your codes and environments, it would be nice to present your pages and codes in the interview.
+Read and learn the documents about header bidding mentioned in the references section. 
+Implement the following challenges **as best as you can**.
+Please keep your codes and environments. It would be nice to review your pages and codes in the interview.
 
-# Challenges
 
-- **Challenge A**
 
-    Implement a html page to display **an ad** with Prebid.js and googletag integrated based on the **'Basic Prebid.js Example'** from Prebid.js.
+## Challenges
 
-    The size of the ad should be with the width of 728 and the height of 90
 
-    Here is the expected output:
+### Challenge A
 
-    ![images/challengeA.png](images/challengeA.png)
+Implement an HTML page to display **an ad with Prebid.js and googletag** integrated based on the **Basic Prebid.js Example** of Prebid.js.
+The ad should have a width of 728px and a height of 90px.
 
-- **Challenge B**
+Here is the expected output:
 
-    On top of the challenge A, implement another ad in 'div-2', the ad should be delivered from the provided bid server simulator.
+![images/challengeA.png](images/challengeA.png)
 
-    - Here are the information to establish the  bid server simulator by Node.js:
 
-        The entry of the bid server is at `./bid-server/server.js` .
 
-        It exposes two endpoints:
+### Challenge B
 
-        - `/static` - To make static html pages assessable via the bid server
-        - `/bids` - To receive bids requests from the yieldloveBidAdapter in Prebid.js and response bids
+On top of **Challenge A**, implement another ad in a DIV with an ID of "div-2",
+the ad should be delivered from the provided bid server simulator.
 
-        The endpoints must be accessible via the domain of `[test.yieldlove.com:20457](http://test.yieldlove.com:20457)` ,
+The ad should have a width of 300px and a height of 250px.
 
-        It's required to map 127.0.0.1 to `[test.yieldlove.com:20457](http://test.yieldlove.com:20457)` locally. It's can be done via modifying the hosts file.
 
-    - A local built Prebid.js with the provided yieldloveBidAdapter.js under the `resources` folder is needed.
-        - Build Prebid.js locally and use the built Prebid.js to display ads. Please refer to 'Build Prebid.js locally for tests' in the References section for more information.
-        - Enable the Yieldlove bid adapter at the local build.
+The expected solution should look similar to the following image:
 
-            The provided yieldloveBidAdapter.js needs to be placed into the `modules` folder.
+![images/challengeB.png](images/challengeB.png)
 
-    - The `window.pbjsYLHH` must refer to `pbjs` before the calling on pbjs.requestBids
-    - The html page to display ads should be accessible via the `http://test.yieldlove.com:20457/static`
-    - The ad unit code (ad unit path) displayed in the 'div-2' should be `/53015287/yieldlove.com_hb_test_300x250_2`
 
-        Here is the bids configuration:
+Here are additional resources for this challenge:
 
-        ```
-        [{
-             bidder: 'yieldlove',
-             params: {
-                placementId: 40882157810
-             }
-        }]
-        ```
 
-        The size should be with the width of 300 and the height of 250
+#### Endpoint
 
-    - It's recommended to turn on Prebid.js debug messages on console to debug. Check more details here:
+The entry of the bid server is located at `./bid-server/server.js`. It exposes two endpoints:
 
-        https://docs.prebid.org/troubleshooting/troubleshooting-guide.html#turn-on-prebidjs-debug-messages
+| Endpoint       | Description |
+| -------------- | ----------- |
+| `/static`      | To make static html pages accessible via the bid server |
+| `/bids`        | To receive bid requests from the yieldloveBidAdapter in Prebid.js and response bids |
 
-    Here is the expected output:
+It is required to map [test.yieldlove.com:20457](http://test.yieldlove.com:20457) to your localhost.
+The endpoints must be accessible via the domain [test.yieldlove.com:20457](http://test.yieldlove.com:20457).
+This can be accomplished by modifying your hosts file.
 
-    ![images/challengeB.png](images/challengeB.png)
+The cpm in the responded bid is generated randomly.
 
-    The cpm in the responded bid is generated randomly.
 
-- **Challenge C**
+#### Prebid.js Build
 
-    Based on **the challenge B, s**et customized targeting key for the GPT slot for `/53015287/yieldlove.com_hb_test_300x250_2` based on received bids.
+A locally built Prebid.js with the provided `yieldloveBidAdapter.js` must be placed in the `resources` folder.
 
-    - Call `googletag.Slot.setTargeting` to set targeting keys for a specified ad slot. Refer to the Google Tag API for more inforamtion. The `Slot.setTargeting` must be called before the calling on `googletag.pubads().refresh()`
-    - Expected keys and values are:
-        - Name of the key: `yieldlove_hb_pb`
+Build Prebid.js locally and use the built Prebid.js to display ads. Rename the global from **pbjs** to **pbjsYLHH**.
 
-            Expected value: A rounded number with two decimal from the CPM of the winning bid
+Please refer to **Build Prebid.js locally for tests** in the References section for more information.
 
-            - The rule to round is
-                - if the CPM < 20, rounded to 2 decimal
-                - if the CPM ≥ 20 and < 60, rounded to 2 decimal with step of each 0.05 euro
 
-                For example:
+#### Yieldlove bid adapter
 
-                ```
-                If the CPM is 0.5213124, the value should be 0.52
-                If the CPM is 21.21456, the value should be 21.25
-                If the CPM is 22.266, the value should be 22.30
-                ```
+Add the Yieldlove bid adapter into your local prebid build. The provided `yieldloveBidAdapter.js` needs to be placed in the `modules` folder of prebid.
 
-        - Name of the key: `yieldlove_hb_adid`
+The HTML page to display ads should be accessible via [test.yieldlove.com:20457/static](http://test.yieldlove.com:20457/static).
 
-            Expected value: the adid from the recived bid
+The ad unit code (ad unit path) displayed in the 'div-2' should be `/53015287/yieldlove.com_hb_test_300x250_2`
 
-        - Name of the key: `yieldlove_hb_placement`
+The Bid Adapter configuration looks like the following:
 
-            Expected value: `9859`
+```
+[
+  {
+    bidder: 'yieldlove',
+    params: {
+      placementId: 40882157810
+    }
+  }
+]
+```
 
-- **Challenge D**
 
-    Implement another page to display the ad in the 'Div-2' based on the **challenge B** but **with Prebid.js integrated only (don't use the google tag library)**
-    The ad in the Div-1 doesn't need to be displayed.
+#### Debugging
 
-- **Challenge E**
+It's recommended to turn on Prebid.js debug messages on console to debug. Check more details here:
+https://docs.prebid.org/troubleshooting/troubleshooting-guide.html#turn-on-prebidjs-debug-messages
 
-    Implement another page to display the same ads based on **the challenge B** with **one of the following framework**:
-    - Vuejs
-    - React
-    - Angular
+
+
+### Challenge C
+
+Based on **Challange B**. Set a customized targeting key for the GPT slot for `/53015287/yieldlove.com_hb_test_300x250_2` based on received bids.
+
+Call `googletag.Slot.setTargeting` to set targeting keys for a specified ad slot.
+
+Refer to the Google Tag API for more inforamtion. The `Slot.setTargeting` must be called before invoking `googletag.pubads().refresh()`
+
+| Key            | Value | Description |
+| -------------- | ----- | ----------- |
+| `yieldlove_hb_pb` | A rounded number with two decimal places from the CPM of the winning bid | The rule to round is:<br> - if the CPM < 20, rounded to 2 decimal<br> - if the CPM ≥ 20 and < 60, rounded to 2 decimal with step of each 0.05 euro<br><br>For Example:<br>- If the CPM is 0.5213124, the value should be `0.52`<br> - If the CPM is 21.21456, the value should be `21.25`<br> - If the CPM is 22.266, the value should be `22.30` |
+| `yieldlove_hb_adid` | The ad identifier of the received bid | The `bidResponse.adId` property |
+| `yieldlove_hb_placement` | The placement identifier | A constant value of `9859` |
+
+
+
+### Challenge D
+
+Implement the ad of **Challenge B - "div-2"** with Prebid.js as the only SSP (ad partner).
+Refrain from using the googletag library.
+
+
+
+### Challenge E
+
+Implement another page to display the same ads based on **Challenge B** with one of the following frameworks:
+ - Vuejs
+ - React
+ - Angular
+
+
+
+
 
 # References
 
-- What is header bidding?
+### What is header bidding?
+[https://docs.prebid.org/overview/intro.html#what-is-header-bidding](https://docs.prebid.org/overview/intro.html#what-is-header-bidding)
 
-    [https://docs.prebid.org/overview/intro.html#what-is-header-bidding](https://docs.prebid.org/overview/intro.html#what-is-header-bidding)
+### Basic Prebid.js Example with googletag integration
+[https://docs.prebid.org/dev-docs/examples/basic-example.html](https://docs.prebid.org/dev-docs/examples/basic-example.html)
 
-- Basic Prebid.js Example with googletag integration
+### Ad Unit Reference
+[https://docs.prebid.org/dev-docs/adunit-reference.html](https://docs.prebid.org/dev-docs/adunit-reference.html)
 
-    [https://docs.prebid.org/dev-docs/examples/basic-example.html](https://docs.prebid.org/dev-docs/examples/basic-example.html)
+### Google Tag API Reference
+[https://developers.google.com/doubleclick-gpt/reference](https://developers.google.com/doubleclick-gpt/reference)
 
-- Ad Unit Reference
+### Building Prebid.js locally for tests
+[https://github.com/prebid/Prebid.js/blob/master/README.md](https://github.com/prebid/Prebid.js/blob/master/README.md)
 
-    [https://docs.prebid.org/dev-docs/adunit-reference.html](https://docs.prebid.org/dev-docs/adunit-reference.html)
 
-- Google Tag API
 
-    [https://developers.google.com/doubleclick-gpt/reference](https://developers.google.com/doubleclick-gpt/reference)
-
-- Build Prebid.js locally for tests
-
-    [https://github.com/prebid/Prebid.js/blob/master/README.md](https://github.com/prebid/Prebid.js/blob/master/README.md)
