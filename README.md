@@ -55,11 +55,11 @@ The entry of the bid server is located at `./bid-server/server.js`. It exposes t
 
 | Endpoint       | Description |
 | -------------- | ----------- |
-| `/static` | To make static html pages assessable via the bid server |
-| `/bids` | To receive bids requests from the yieldloveBidAdapter in Prebid.js and response bids |
+| `/static`      | To make static html pages accessible via the bid server |
+| `/bids`        | To receive bid requests from the yieldloveBidAdapter in Prebid.js and response bids |
 
 It is required to map [test.yieldlove.com:20457](http://test.yieldlove.com:20457) to your localhost.
-The endpoints must be accessible via the domain [test.yieldlove.com:20457](http://test.yieldlove.com:20457),
+The endpoints must be accessible via the domain [test.yieldlove.com:20457](http://test.yieldlove.com:20457).
 This can be accomplished by modifying your hosts file.
 
 
