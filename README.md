@@ -8,6 +8,7 @@
       - [Endpoint](#endpoint)
       - [Prebid.js Build](#prebidjs-build)
       - [Yieldlove bid adapter](#yieldlove-bid-adapter)
+      - [Debugging](#debugging)
     + [Challenge C](#challenge-c)
     + [Challenge D](#challenge-d)
     + [Challenge E](#challenge-e)
@@ -75,15 +76,16 @@ The cpm in the responded bid is generated randomly.
 
 #### Prebid.js Build
 
-Build Prebid.js locally and use the built Prebid.js to display ads.
 A locally built Prebid.js with the provided `yieldloveBidAdapter.js` must be placed in the `resources` folder.
+
+Build Prebid.js locally and use the built Prebid.js to display ads. Rename the global from **pbjs** to **pbjsYLHH**.
 
 Please refer to **Build Prebid.js locally for tests** in the References section for more information.
 
 
 #### Yieldlove bid adapter
 
-Add the Yieldlove bid adapter into your local build. The provided `yieldloveBidAdapter.js` needs to be placed in the `modules` folder of prebid.
+Add the Yieldlove bid adapter into your local prebid build. The provided `yieldloveBidAdapter.js` needs to be placed in the `modules` folder of prebid.
 
 The HTML page to display ads should be accessible via [test.yieldlove.com:20457/static](http://test.yieldlove.com:20457/static).
 
@@ -103,7 +105,7 @@ The Bid Adapter configuration looks like the following:
 ```
 
 
-#### Debug
+#### Debugging
 
 It's recommended to turn on Prebid.js debug messages on console to debug. Check more details here:
 https://docs.prebid.org/troubleshooting/troubleshooting-guide.html#turn-on-prebidjs-debug-messages
