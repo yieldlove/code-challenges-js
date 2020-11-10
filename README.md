@@ -102,7 +102,6 @@ Refer to the Google Tag API for more inforamtion. The `Slot.setTargeting` must b
 | Key            | Value | Description |
 | -------------- | ----- | ----------- |
 | `yieldlove_hb_pb` | A rounded number with two decimal places from the CPM of the winning bid | The rule to round is:<br> - if the CPM < 20, rounded to 2 decimal<br> - if the CPM ≥ 20 and < 60, rounded to 2 decimal with step of each 0.05 euro<br><br>For Example:<br>- If the CPM is 0.5213124, the value should be `0.52`<br> - If the CPM is 21.21456, the value should be `21.25`<br> - If the CPM is 22.266, the value should be `22.30` |
-
 | `yieldlove_hb_adid` | The ad identifier of the received bid | The `bidResponse.adId` property |
 | `yieldlove_hb_placement` | The placement identifier | A constant value of `9859` |
 
