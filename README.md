@@ -102,10 +102,12 @@ Please keep your codes and environments, it would be nice to present your pages 
 
 - **Challenge D**
 
-    Implement another page based on the **challenge B** but **with Prebid.js integrated only (don't use the google tag library)**
+    Implement another page to display the ad in the 'Div-2' based on the **challenge B** but **with Prebid.js integrated only (don't use the google tag library)**
+    The ad in the Div-1 doesn't need to be displayed.
 
 - **Challenge E**
-Implement another page to display the same ads based on **the challenge B** with **one of the following framework**:
+
+    Implement another page to display the same ads based on **the challenge B** with **one of the following framework**:
     - Vuejs
     - React
     - Angular
