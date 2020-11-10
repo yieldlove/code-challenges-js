@@ -33,7 +33,7 @@ Please keep your codes and environments. It would be nice to review your pages a
 ### Challenge A
 
 Implement an HTML page to display **an ad with Prebid.js and googletag** integrated based on the **Basic Prebid.js Example** of Prebid.js.
-The size of the ad should have a width of 728px and a height of 90px
+The ad should have a width of 728px and a height of 90px.
 
 Here is the expected output:
 
@@ -45,6 +45,14 @@ Here is the expected output:
 
 On top of **Challenge A**, implement another ad in a DIV with an ID of "div-2",
 the ad should be delivered from the provided bid server simulator.
+
+The ad should have a width of 300px and a height of 250px.
+
+
+The expected solution should look similar to the following image:
+
+![images/challengeB.png](images/challengeB.png)
+
 
 Here are resources on how to run a local bid server in Node.js:
 
@@ -62,26 +70,26 @@ It is required to map [test.yieldlove.com:20457](http://test.yieldlove.com:20457
 The endpoints must be accessible via the domain [test.yieldlove.com:20457](http://test.yieldlove.com:20457).
 This can be accomplished by modifying your hosts file.
 
+The cpm in the responded bid is generated randomly.
+
 
 #### Prebid.js Build
 
-A local built Prebid.js with the provided `yieldloveBidAdapter.js` under the `resources` folder is needed.
-
 Build Prebid.js locally and use the built Prebid.js to display ads.
-Please refer to "Build Prebid.js locally for tests" in the References section for more information.
+A locally built Prebid.js with the provided `yieldloveBidAdapter.js` must be placed in the `resources` folder.
+
+Please refer to **Build Prebid.js locally for tests** in the References section for more information.
 
 
 #### Yieldlove bid adapter
 
-Enable the Yieldlove bid adapter at the local build.
+Add the Yieldlove bid adapter into your local build. The provided `yieldloveBidAdapter.js` needs to be placed in the `modules` folder of prebid.
 
-The provided `yieldloveBidAdapter.js` needs to be placed into the `modules` folder.
+The HTML page to display ads should be accessible via [test.yieldlove.com:20457/static](http://test.yieldlove.com:20457/static).
 
-The `window.pbjsYLHH` must refer to `pbjs` before calling `pbjs.requestBids`.
-The html page to display ads should be accessible via the [test.yieldlove.com:20457/static](http://test.yieldlove.com:20457/static)
 The ad unit code (ad unit path) displayed in the 'div-2' should be `/53015287/yieldlove.com_hb_test_300x250_2`
 
-Here is the bids configuration:
+The Bid Adapter configuration looks like the following:
 
 ```
 [
@@ -94,17 +102,11 @@ Here is the bids configuration:
 ]
 ```
 
-The size should be with the width of 300 and the height of 250
+
+#### Debug
 
 It's recommended to turn on Prebid.js debug messages on console to debug. Check more details here:
 https://docs.prebid.org/troubleshooting/troubleshooting-guide.html#turn-on-prebidjs-debug-messages
-
-
-The expected solution should look similar to the following image:
-
-![images/challengeB.png](images/challengeB.png)
-
-The cpm in the responded bid is generated randomly.
 
 
 
