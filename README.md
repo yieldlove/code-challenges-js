@@ -46,7 +46,7 @@ Here is the expected output:
 On top of **Challenge A**, implement another ad in a DIV with an ID of "div-2",
 the ad should be delivered from the provided bid server simulator.
 
-Here are resources on how to establish a local bid server in Node.js:
+Here are resources on how to run a local bid server in Node.js:
 
 
 #### Endpoint
