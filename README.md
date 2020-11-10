@@ -21,7 +21,7 @@
 
 ## Goal
 
-Read/learn documents in the references section about header bidding. 
+Read and learn the documents about header bidding mentioned in the references section. 
 
 Implement the following challenges **as best as you can**.
 
@@ -34,10 +34,8 @@ Please keep your codes and environments. It would be nice to review your pages a
 
 ### Challenge A
 
-Implement a html page to display **an ad** with Prebid.js and googletag integrated based on the **'Basic Prebid.js Example'** from Prebid.js.
-
-The size of the ad should be with the width of 728 and the height of 90
-
+Implement an HTML page to display **an ad with Prebid.js and googletag** integrated based on the **Basic Prebid.js Example** of Prebid.js.
+The size of the ad should have a width of 728px and a height of 90px
 Here is the expected output:
 
 ![images/challengeA.png](images/challengeA.png)
@@ -46,9 +44,10 @@ Here is the expected output:
 
 ### Challenge B
 
-On top of the challenge A, implement another ad in 'div-2', the ad should be delivered from the provided bid server simulator.
+On top of **Challenge A**, implement another ad in a DIV with an ID of "div-2",
+the ad should be delivered from the provided bid server simulator.
 
-Here are the information to establish the  bid server simulator by Node.js:
+Here are resources on how to establish a local bid server in Node.js:
 
 
 #### Endpoint
@@ -128,7 +127,7 @@ Refer to the Google Tag API for more inforamtion. The `Slot.setTargeting` must b
 
 ### Challenge D
 
-Implement the ad of **Challenge B - "Div-2"** with Prebid.js as the only SSP (ad partner).
+Implement the ad of **Challenge B - "div-2"** with Prebid.js as the only SSP (ad partner).
 Refrain from using the googletag library.
 
 
