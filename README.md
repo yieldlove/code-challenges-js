@@ -54,7 +54,7 @@ The expected solution should look similar to the following image:
 ![images/challengeB.png](images/challengeB.png)
 
 
-Here are resources on how to run a local bid server in Node.js:
+Here are additional resources for this challenge:
 
 
 #### Endpoint
