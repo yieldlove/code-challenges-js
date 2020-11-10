@@ -12,7 +12,7 @@
     + [Challenge D](#challenge-d)
     + [Challenge E](#challenge-e)
 - [References](#references)
-    + [What is header bidding?](#what-is-header-bidding-)
+    + [What is header bidding?](#what-is-header-bidding)
     + [Basic Prebid.js Example with googletag integration](#basic-prebidjs-example-with-googletag-integration)
     + [Ad Unit Reference](#ad-unit-reference)
     + [Google Tag API Reference](#google-tag-api-reference)
