@@ -1,5 +1,22 @@
 # Code challenge for Job Interview
 
+- [Code challenge for Job Interview](#code-challenge-for-job-interview)
+  * [Goal](#goal)
+  * [Challenges](#challenges)
+    + [Challenge A](#challenge-a)
+    + [Challenge B](#challenge-b)
+      - [Endpoint](#endpoint)
+      - [Prebid.js Build](#prebidjs-build)
+      - [Yieldlove bid adapter](#yieldlove-bid-adapter)
+    + [Challenge C](#challenge-c)
+    + [Challenge D](#challenge-d)
+    + [Challenge E](#challenge-e)
+- [References](#references)
+    + [What is header bidding?](#what-is-header-bidding-)
+    + [Basic Prebid.js Example with googletag integration](#basic-prebidjs-example-with-googletag-integration)
+    + [Ad Unit Reference](#ad-unit-reference)
+    + [Google Tag API Reference](#google-tag-api-reference)
+    + [Building Prebid.js locally for tests](#building-prebidjs-locally-for-tests)
 
 
 ## Goal
@@ -107,7 +124,7 @@ Refer to the Google Tag API for more inforamtion. The `Slot.setTargeting` must b
 
 
 
-### Challenge C
+### Challenge D
 
 Implement another page based on **Challenge B** but with Prebid.js integrated only.
 Refrain from using the googletag library.
@@ -127,19 +144,19 @@ Implement another page to display the same ads based on **Challenge B** with one
 
 # References
 
-## What is header bidding?
+### What is header bidding?
 [https://docs.prebid.org/overview/intro.html#what-is-header-bidding](https://docs.prebid.org/overview/intro.html#what-is-header-bidding)
 
-## Basic Prebid.js Example with googletag integration
+### Basic Prebid.js Example with googletag integration
 [https://docs.prebid.org/dev-docs/examples/basic-example.html](https://docs.prebid.org/dev-docs/examples/basic-example.html)
 
-## Ad Unit Reference
+### Ad Unit Reference
 [https://docs.prebid.org/dev-docs/adunit-reference.html](https://docs.prebid.org/dev-docs/adunit-reference.html)
 
-## Google Tag API Reference
+### Google Tag API Reference
 [https://developers.google.com/doubleclick-gpt/reference](https://developers.google.com/doubleclick-gpt/reference)
 
-## Building Prebid.js locally for tests
+### Building Prebid.js locally for tests
 [https://github.com/prebid/Prebid.js/blob/master/README.md](https://github.com/prebid/Prebid.js/blob/master/README.md)
 
 
