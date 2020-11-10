@@ -34,7 +34,7 @@ export const spec = {
       }
     }));
 
-    const trbRequest = {
+    const rtbRequest = {
       auctionId: validBidRequests[0].auctionId,
       imp: impressions
     }
@@ -42,7 +42,7 @@ export const spec = {
     return {
       method: 'POST',
       url: ENDPOINT_URL,
-      data: JSON.stringify(trbRequest),
+      data: JSON.stringify(rtbRequest),
       options: {
         contentType: 'application/json',
         withCredentials: false,
@@ -75,9 +75,8 @@ export const spec = {
     }
     return bidResponses;
   },
-  getUserSyncs: function () {
 
-  },
-
+  getUserSyncs: function () {},
 };
+
 registerBidder(spec);
