@@ -1,6 +1,6 @@
-# Code challenge for Job Interview
+# Code Challenges
 
-- [Code challenge for Job Interview](#code-challenge-for-job-interview)
+- [Code Challenges](#code-challenges)
   * [Goal](#goal)
   * [Challenges](#challenges)
     + [Challenge A](#challenge-a)
