@@ -22,9 +22,7 @@
 ## Goal
 
 Read and learn the documents about header bidding mentioned in the references section. 
-
 Implement the following challenges **as best as you can**.
-
 Please keep your codes and environments. It would be nice to review your pages and codes in the interview.
 
 
@@ -36,6 +34,7 @@ Please keep your codes and environments. It would be nice to review your pages a
 
 Implement an HTML page to display **an ad with Prebid.js and googletag** integrated based on the **Basic Prebid.js Example** of Prebid.js.
 The size of the ad should have a width of 728px and a height of 90px
+
 Here is the expected output:
 
 ![images/challengeA.png](images/challengeA.png)
