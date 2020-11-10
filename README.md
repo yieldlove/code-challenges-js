@@ -50,6 +50,7 @@ On top of the challenge A, implement another ad in 'div-2', the ad should be del
 
 Here are the information to establish the  bid server simulator by Node.js:
 
+
 #### Endpoint
 
 The entry of the bid server is at `./bid-server/server.js` .
@@ -64,12 +65,14 @@ The endpoints must be accessible via the domain of [test.yieldlove.com:20457](ht
 It's required to map 127.0.0.1 to [test.yieldlove.com:20457](http://test.yieldlove.com:20457) locally.
 It can be done via modifying the hosts file.
 
+
 #### Prebid.js Build
 
 A local built Prebid.js with the provided `yieldloveBidAdapter.js` under the `resources` folder is needed.
 
 Build Prebid.js locally and use the built Prebid.js to display ads.
 Please refer to "Build Prebid.js locally for tests" in the References section for more information.
+
 
 #### Yieldlove bid adapter
 
@@ -126,7 +129,7 @@ Refer to the Google Tag API for more inforamtion. The `Slot.setTargeting` must b
 
 ### Challenge D
 
-Implement another page based on **Challenge B** but with Prebid.js integrated only.
+Implement the ad of **Challenge B - "Div-2"** with Prebid.js as the only SSP (ad partner).
 Refrain from using the googletag library.
 
 
