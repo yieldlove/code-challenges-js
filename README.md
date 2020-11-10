@@ -53,17 +53,16 @@ Here are the information to establish the  bid server simulator by Node.js:
 
 #### Endpoint
 
-The entry of the bid server is at `./bid-server/server.js` .
+The entry of the bid server is located at `./bid-server/server.js`. It exposes two endpoints:
 
-It exposes two endpoints are:
+| Endpoint       | Description |
+| -------------- | ----------- |
+| `/static` | To make static html pages assessable via the bid server |
+| `/bids` | To receive bids requests from the yieldloveBidAdapter in Prebid.js and response bids |
 
-`/static`: To make static html pages assessable via the bid server
-`/bids`: To receive bids requests from the yieldloveBidAdapter in Prebid.js and response bids
-
-The endpoints must be accessible via the domain of [test.yieldlove.com:20457](http://test.yieldlove.com:20457),
-
-It's required to map 127.0.0.1 to [test.yieldlove.com:20457](http://test.yieldlove.com:20457) locally.
-It can be done via modifying the hosts file.
+It is required to map [test.yieldlove.com:20457](http://test.yieldlove.com:20457) to your localhost.
+The endpoints must be accessible via the domain [test.yieldlove.com:20457](http://test.yieldlove.com:20457),
+This can be accomplished by modifying your hosts file.
 
 
 #### Prebid.js Build
